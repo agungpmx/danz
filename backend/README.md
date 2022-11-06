@@ -1,24 +1,19 @@
-### Features
+### API DOCS
 
-- Controller
-- Routes
-- Model
-- Sequelize (ORM)
+## Login
+http://localhost:3000/api/login
 
-### Quick Start
+## Register
+localhost:3000/api/user/create
 
-Install package modules
+## List All User
+http://localhost:3000/api/user
 
-    npm install
+## List Jobs Searcb
+localhost:3000/api/jobs?pageSize=1&page=1
 
-Environment configuration
+## List All Jobs Wiht Out Search
+localhost:3000/api/alljobs
 
-    cp .env.example .env
-
-Run application
-
-    npm start
-
-## License
-
-[MIT](LICENSE)
+## Detail Jobs
+http://localhost:3000/api/detailJobs?id=32bf67e5-4971-47ce-985c-44b6b3860cdb

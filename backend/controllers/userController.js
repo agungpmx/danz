@@ -15,18 +15,6 @@ const listUser = async (req, res) => {
   return req.output(req, res, objectResponse, "info", 200);
 };
 
-const detailUser = async (req, res) => {
-  let data = await req.services.userService.detail(req, req.params.id);
-
-  let objectResponse = await {
-    error: false,
-    message: "Found",
-    data: data,
-  };
-
-  return req.output(req, res, objectResponse, "info", 200);
-};
-
 const createUser = async (req, res) => {
   let toValidate = [
     {
@@ -68,67 +56,6 @@ const createUser = async (req, res) => {
   let objectResponse = await {
     error: false,
     message: "Created",
-  };
-
-  return req.output(req, res, objectResponse, "info", 200);
-};
-
-const updateUser = async (req, res) => {
-  let toValidate = [
-    {
-      name: "email",
-      value: req.body.email,
-    },
-    {
-      name: "user_name",
-      value: req.body.user_name,
-    },
-  ];
-  req.validation.validate(toValidate, (err) => {
-    if (err) {
-      return req.output(req, res, err, "error", 400);
-    }
-  });
-
-  let exUser = await req.services.userService.detail(req, req.params.id);
-  if (exUser != null && exUser.id != req.params.id) {
-    let errMsg = await {
-      error: true,
-      message: "Email sudah terdaftar",
-    };
-    return req.output(req, res, errMsg, "error", 400);
-  }
-
-  let body = {
-    email: req.body.email || exUser.email,
-    user_name: req.body.user_name || null,
-  };
-
-  let data = await req.services.userService.update(req, req.params.id, body);
-
-  let objectResponse = await {
-    error: false,
-    message: "Updated",
-  };
-
-  return req.output(req, res, objectResponse, "info", 200);
-};
-
-const deleteUser = async (req, res) => {
-  let data = await req.services.userService
-    .destroy(req, req.params.id)
-    .catch((err) => {
-      let objectResponse = {
-        error: true,
-        message: "can't delete user",
-        data: err.name,
-      };
-      return req.output(req, res, objectResponse, "error", 400);
-    });
-
-  let objectResponse = await {
-    error: false,
-    message: "Deleted",
   };
 
   return req.output(req, res, objectResponse, "info", 200);
@@ -188,9 +115,6 @@ const login = async (req, res) => {
 
 module.exports = {
   listUser,
-  detailUser,
   createUser,
-  updateUser,
-  deleteUser,
   login,
 };

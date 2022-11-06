@@ -7,7 +7,6 @@ require("dotenv").config();
 const models = require("./models");
 const services = require("./services");
 const output = require("./utils/output");
-const mailer = require("./utils/mailer");
 const headersApi = require("./utils/headersApi");
 const validation = require("./utils/validation");
 
@@ -26,7 +25,6 @@ app.use((req, res, next) => {
   req.models = models;
   req.services = services;
   req.validation = validation;
-  req.mailer = mailer;
 
   next();
 });

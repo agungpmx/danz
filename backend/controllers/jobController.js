@@ -29,18 +29,6 @@ const alljobController = async (req, res) => {
 
   return req.output(req, res, objectResponse, "info", 200);
 };
-
-// const filters = req.query;
-// const filteredUsers = data.filter(user => {
-//   let isValid = true;
-//   for (key in filters) {
-//     console.log(key, user[key], filters[key]);
-//     isValid = isValid && user[key] == filters[key];
-//   }
-//   return isValid;
-// });
-// res.send(filteredUsers);
-
 const jobSearchController = async (req, res) => {
   const filters = req.query;
 
@@ -51,9 +39,6 @@ const jobSearchController = async (req, res) => {
   const filteredData = data.filter(dataFil => {
     let isValid = true;
     for (key in filters) {
-      // console.log(key, user[key], filters[key]);
-      // isValid = isValid && user[key] == filters[key];
-
       console.log(key, dataFil[key], filters[key]);
       isValid = isValid && dataFil[key] == filters[key];
     }
@@ -72,12 +57,13 @@ const jobSearchController = async (req, res) => {
 
 
 const jobDetailController = async (req, res) => {
-  let data = await req.services.userService.detail(req, req.params.id);
+  let data = await req.services.jobService.detailJob(req, req.query.id);
+  console.log(data);
 
   let objectResponse = await {
     error: false,
     message: "Found",
-    data: data,
+    data: data.data,
   };
 
   return req.output(req, res, objectResponse, "info", 200);

@@ -17,10 +17,12 @@ const listJob = async (req) => {
 };
 
 const detailJob = async (req, id) => {
-  let data = await req.models.userModel.findOne({
-    where: { id: id },
-  });
-  return data;
+  // http://dev3.dansmultipro.co.id/api/recruitment/positions/{ID}
+  console.log(id)
+	let data = await axios.get(`http://dev3.dansmultipro.co.id/api/recruitment/positions/${id}`);
+
+	console.log(data)
+ 	return data;
 };
 
 module.exports = { listJob, detailJob };
