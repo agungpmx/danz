@@ -1,0 +1,51 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Backend",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main.js",
+    "lint": "eslint --fix --ignore-path .gitignore .; exit 0",
+    "check-lint": "eslint --ignore-path .gitignore .; exit 0"
+  },
+  "lint-staged": {
+    "*.js": "eslint --fix",
+    "*.{js,css,md}": "prettier --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/agungputra.azm/backend.git"
+  },
+  "keywords": [
+    "node",
+    "express"
+  ],
+  "author": "agung putra",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "nodemon": "^2.0.12",
+    "prettier": "2.3.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "circular-json": "^0.5.9",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "nangning-logger-color": "^1.2.1",
+    "node-fetch": "^3.2.10",
+    "nodemailer": "^6.6.3",
+    "pg": "^8.7.1",
+    "sequelize": "^6.6.5"
+  }
+}

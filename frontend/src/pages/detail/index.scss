@@ -1,0 +1,59 @@
+
+    .location {
+        color: rgb(143, 134, 134);
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .label {
+        font-size: 20px;
+    }
+    .container_detail {
+        border-top: 1px solid rgb(224, 222, 222);
+        display: flex;
+        .grid1 {
+            flex: 3;
+            padding: 0 10px;
+        }
+        .grid2 {
+            flex: 1;
+            max-width: 350px;
+            .company {
+                // height: 100%
+                width: 100%;
+                background-color: #fff;
+                border: 3px solid rgb(154, 152, 152);
+
+                .name_company {
+                    padding: 10px;
+                    font-weight: 700;
+                    font-size: 15px;
+                    border-bottom: 1px solid rgb(154, 152, 152);
+                }
+
+                .logo_company {
+                    padding: 10px;
+                    // height: 200px;
+                }
+            }
+
+            .jobs {
+                // height: 160px;
+                width: 100%;
+                background-color: rgb(228, 243, 130);
+                border: 3px solid rgb(154, 152, 152);
+
+                .name_label {
+                    padding: 10px;
+                    font-weight: 700;
+                    font-size: 15px;
+                    border-bottom: 1px solid rgb(154, 152, 152);
+                }
+
+                .detail_apply {
+                    padding: 0px 10px;
+                    word-wrap: break-word; 
+                }
+            }
+            
+        }
+    }

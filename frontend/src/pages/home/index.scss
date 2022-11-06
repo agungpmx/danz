@@ -1,0 +1,41 @@
+
+    .label {
+        font-size: 50px; 
+        font-weight: bold;       
+    }
+
+    .list {
+        height: 70px;
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #c5c7c9;
+        .label_list {
+            font-size: 17px;
+            margin-top: 10px;
+            color: var(--main-panel-color);
+            font-weight: 600;
+        }
+
+        .company {
+            font-weight: 500;
+            color: #c5c7c9;
+        }
+        .type {
+            color: green;
+            font-weight: 700;
+        }
+
+        .location {
+            font-size: 14px;
+            font-weight: 700;
+            color: #67696b;
+        }
+        
+        .date {
+            font-size: 14px;
+            font-weight: 500;
+            color: #a4a6a8;
+        }
+    }
